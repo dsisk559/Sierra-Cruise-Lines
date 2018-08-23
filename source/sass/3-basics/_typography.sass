@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Alice|Encode+Sans:400,700')
+
+//font variables
+$text-font: 'Encode Sans', serif
+$heading-font: 'Alice', san-sarif
+
+//styles
+body
+  font-family: $text-font
+  font-weight: 400
+  color: $sierra-black
+
+h1, h2, h3, h4, h5, h6
+  font-family: $heading-font
+  color: $sierra-black
+
+h1
+  color: $sierra-black
+
+h2
+  color: $sierra-orange
+
+h3
+  color: $sierra-purple
+
+a
+  color: $sierra-black
+  text-decoration: none
+  @include easeOut
+
+  &:hover
+    color: $sierra-orange
+    @include easeOut

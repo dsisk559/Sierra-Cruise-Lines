@@ -1,0 +1,108 @@
+header
+  position: relative
+
+// Menu Button  
+.menu-btn
+  position: absolute
+  z-index: 3
+  left: 35px
+  top: 35px
+  cursor: pointer
+  @include easeOut
+
+  .btn-line
+    width: 28px
+    height: 3px
+    margin: 0 0 5px 0
+    background: $sierra-black
+    @include easeOut
+
+  //Rotate line into X
+  &.close
+    transform: rotate(180deg)
+
+    .btn-line
+      // line 1 - rotate
+      &:nth-child(1)
+        transform: rotate(45deg) translate(5px, 5px)
+      
+      // line 2 - hide
+      &:nth-child(2)
+        opacity: 0
+      
+      // line 3 - rotate
+      &:nth-child(3)
+        transform: rotate(-45deg) translate(7px, -6px)
+
+.logo
+  display: block
+  margin: 0 auto 
+  width: 225px
+
+  svg
+    height: 50px
+    padding: 15px 0
+
+  a svg .cls-1
+    @include easeOut
+
+  a:hover svg .cls-1
+    fill: $sierra-orange
+    @include easeOut
+  
+.social
+  display: block 
+  position: absolute
+  top: 35px
+  right: 35px
+  font-size: 1.25rem
+
+  a
+    color: $sierra-black
+    text-decoration: none
+    @include easeOut
+  
+    &:hover
+      color: $sierra-orange
+
+  @media screen and (max-width: 600px)
+    right: 50%
+    top: 60px
+    transform: translateX(50%)
+
+
+.menu
+  width: 100%
+  height: 0
+  display: block
+  overflow: hidden
+  background: $sierra-purple
+  @include easeOut
+  
+
+  &.show
+    height: 175px
+    @include easeOut
+
+.menu-nav
+  display: block
+  margin: 0
+  padding: 0
+  list-style-type: none
+  @include easeOut
+
+  .nav-item
+    display: block
+    width: 100%
+    margin: 0 auto
+    padding: 0 0 5px 35px
+    @include easeOut
+
+    a
+      font-size: 24px
+      color: #fff
+
+      &:hover
+        color: $sierra-orange
+      
+      
