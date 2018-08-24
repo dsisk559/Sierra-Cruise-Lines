@@ -3,6 +3,7 @@ const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelector(".menu");
 const menuNav = document.querySelector(".menu-nav");
 const navItems = document.querySelectorAll(".nav-item");
+var vid = document.getElementById("video").playbackRate = 0.65;
 
 menuBtn.addEventListener("click", toggleMenu);
 
