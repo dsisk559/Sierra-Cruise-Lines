@@ -1,0 +1,43 @@
+.environmental
+  position: relative
+  display: grid
+  grid-template-columns: repeat(3,1fr)
+  grid-gap: 5vw
+  width: 90%
+  padding: 20px
+  margin: -85px auto 0
+  border-radius: 25px
+  background: rgba(255, 255, 255, 0.75)
+  @include boxShadow
+
+  @media screen and (max-width: 850px)
+    grid-template-columns: 1fr
+    background: none
+    box-shadow: none
+    padding: 0
+
+  .card
+    display: grid
+    grid-template-columns: 85px auto
+
+    @media screen and (max-width: 850px)
+      padding: 10px 25px
+      border-radius: 25px 
+      background: rgba(255, 255, 255, 0.75)
+      @include boxShadow
+      
+  .icon
+    display: block
+    height: 50px
+    justify-self: center
+    align-self: center
+
+  .card-text
+    display: block
+
+    h3
+      color: $sierra-orange
+      margin-bottom: .5em
+
+.articles
+  
