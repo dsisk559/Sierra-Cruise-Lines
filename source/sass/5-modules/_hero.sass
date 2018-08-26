@@ -6,8 +6,10 @@
   overflow: hidden
   object-fit: scale-down
   height: calc(100vh - 80px)
+  min-height: 300px
   width: 100%
   clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%)
+  
 
   video
     position: relative
@@ -63,4 +65,23 @@
       &:hover
         background: $sierra-orange
         @include easeOut
+
+@media screen and (max-width: 400px)
+  .hero
+    height: calc(80vh - 80px)
+    min-height: unset
+    clip-path: unset
+
+    .call-to-action
+      bottom: 25px
+      right: 5%
+      left: 5%
+      text-align: center
+
+      h1, p, .btn
+        float: unset
+        margin: 0
+      
+      .btn
+        padding-left: 10px
  

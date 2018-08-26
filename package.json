@@ -21,7 +21,11 @@
         "gulp-sass": "^3.2.1",
         "gulp-sourcemaps": "^2.6.4",
         "gulp-uglify": "^3.0.0",
-        "scrollreveal": "^3.3.6"
+        "scrollreveal": "^3.3.6",
+        "slick-carousel": "^1.8.1",
+        "swiper": "^4.3.5"
     },
-    "dependencies": {}
+    "dependencies": {
+        "npm": "^6.4.0"
+    }
 }
