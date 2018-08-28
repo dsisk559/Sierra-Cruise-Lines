@@ -1,15 +1,1 @@
-// Select DOM Items
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelector(".menu");
-const menuNav = document.querySelector(".menu-nav");
-const navItems = document.querySelectorAll(".nav-item");
-var vid = document.getElementById("video").playbackRate = 0.65;
-
-menuBtn.addEventListener("click", toggleMenu);
-
-function toggleMenu() {
-  menuBtn.classList.toggle("close");
-  menu.classList.toggle("show");
-  menuNav.classList.toggle("show");
-  navItems.forEach(item => item.classList.toggle("show"));
-}
+var menuBtn=document.querySelector(".menu-btn"),menu=document.querySelector(".menu"),menuNav=document.querySelector(".menu-nav"),navItems=document.querySelectorAll(".nav-item"),vid=document.getElementById("video").playbackRate=.65;function toggleMenu(){menuBtn.classList.toggle("close"),menu.classList.toggle("show"),menuNav.classList.toggle("show");for(var e;e<navItems.length;e++)navItems[e].classList.toggle("show")}menuBtn.addEventListener("click",toggleMenu);var prev=document.getElementById("prev"),next=document.getElementById("next"),wrap=document.getElementById("wrapper"),pages=document.getElementById("pages"),slides=document.getElementsByClassName("review"),slidesPerPage=2,moveUnit=997,page=0;function winSize(){window.matchMedia("(max-width: 515px)").matches?(moveUnit=250,slidesPerPage=1,page=0,changePage()):window.matchMedia("(max-width: 940px)").matches?(moveUnit=429,slidesPerPage=1,page=0,changePage()):window.matchMedia("(max-width: 941px)").matches?(slidesPerPage=2,page=0,changePage()):window.matchMedia("(max-width: 1020px)").matches?(moveUnit=840,slidesPerPage=2,page=0,changePage()):slidesPerPage=2,createPageDots()}function createPageDots(){for(var e=slides.length/slidesPerPage;pages.lastChild;)pages.removeChild(pages.lastChild);for(var t=0;t<e;t++){var a;if(t==page)(a=document.createElement("div")).classList.add("page"),a.classList.add("current"),pages.appendChild(a);else(a=document.createElement("div")).classList.add("page"),pages.appendChild(a)}}function changePrevStatus(){0==page?(prev.style.opacity=.5,prev.removeEventListener("click",prevSlide)):1==page&&(prev.style.opacity=1,prev.addEventListener("click",prevSlide))}function changeNextStatus(){page==slides.length/slidesPerPage-2?(next.style.opacity=1,next.addEventListener("click",nextSlide)):page==slides.length/slidesPerPage-1&&(next.style.opacity=.5,next.removeEventListener("click",nextSlide))}function prevSlide(){0==--page&&changePrevStatus(),page==slides.length/slidesPerPage-2&&changeNextStatus(),changePage()}function nextSlide(){1==++page&&changePrevStatus(),page==slides.length/slidesPerPage-1&&changeNextStatus(),changePage()}function changePage(){for(var e=document.getElementsByClassName("page"),t=0;t<e.length;t++)t==page?e[t].classList.add("current"):e[t].classList.contains("current")&&e[t].classList.remove("current");wrap.style.transform="translateX(-"+page*moveUnit+"px)"}window.addEventListener("resize",winSize),prev.addEventListener("click",prevSlide),next.addEventListener("click",nextSlide),winSize(),createPageDots(),changePrevStatus(),changeNextStatus();

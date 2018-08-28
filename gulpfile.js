@@ -54,20 +54,26 @@ gulp.task('images', function () {
 });
 
 // Uglify js files
-gulp.task('scripts', function () {
-    gulp.src('source/js/*.js')
-        .pipe(gulp.dest('build/assets/js'));
+gulp.task("scripts", function () {
+    gulp
+        .src("source/js/*.js")
+        .pipe(plumber())
+        .pipe(gulp.dest("build/assets/js"));
+
+        // add between plumber and gulp.dest
+        //.pipe(uglify())
 });
 
 //Concat and Compress Vendor .js files
-gulp.task('vendors', function () {
-    gulp.src(
-            [
-                'source/js/vendors/jquery.min.js',
-                'source/js/vendors/*.js'
-            ])
-        .pipe(concat('vendors.js'))
-        .pipe(gulp.dest('build/assets/js'));
+gulp.task("vendors", function () {
+    gulp
+        .src(["source/js/vendors/jquery.min.js", "source/js/vendors/*.js"])
+        .pipe(plumber())
+        .pipe(concat("vendors.js"))
+        .pipe(gulp.dest("build/assets/js"));
+
+        // add between concat and gulp.dest
+        //.pipe(uglify())
 });
 
 
