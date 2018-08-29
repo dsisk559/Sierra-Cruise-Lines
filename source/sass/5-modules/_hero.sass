@@ -1,70 +1,58 @@
 .hero
   position: relative
   margin: 0
-  background: $sierra-purple-light
+  background: $sierra-purple-light url(../img/waterfall.jpg) no-repeat
+  background-size: cover
+  background-position: center 
   z-index: 0
   overflow: hidden
-  object-fit: scale-down
   height: calc(100vh - 80px)
   min-height: 300px
   width: 100%
+  text-align: center
   clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%)
   
-
-  video
-    position: relative
-    z-index: -1
-    left: 50%
-    bottom: 50%
-    transform: translateX(-50%)
-
-
-  .gradient
-    position: absolute
-    top: 0
-    left: 0
-    height: 100%
-    width: 100%
-    background: radial-gradient(circle, rgba(149,113,255,0.25) 0%, rgba(149,113,255,1) 100%)
-
-  .call-to-action
-    position: absolute
+  @media screen and (max-width: 800px)
+    background-image: url(../img/waterfall800.jpg)
+  
+  @media screen and (max-width: 450px)
+    background-image: url(../img/waterfall450.jpg)
+    
+  h1
     display: block
-    bottom: 35%
-    right: 35px
-    background: rgba(255,255,255, 0.5)
-    padding: 10px 25px
-    border-radius: 25px
+    margin: 0 auto
+    color: #ffffff
+    font-size: 2.5rem
+    letter-spacing: .2ch
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.75)
+    padding-top: 15vh
+
+  p
+    display: block
+    font-size: 1rem
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.75)
+    letter-spacing: .2ch
+    color: #ffffff
+    padding: 5px 0
+    margin: 5px auto
+
+  
+  
+  .btn
+    display: inline-block
+    background: #2A7A2A
+    color: white
+    font-size: 1rem
+    font-weight: 700
+    padding: 10px 10px
+    border-radius: 5px
+    margin: 5px auto
+    @include easeOut
     @include boxShadow
-    text-align: right
-    
-    h1
-      display: block
-      color: $sierra-purple
 
-    p
-      display: block
-      float: left
-      font-weight: 700
-      color: $sierra-orange
-      padding: 5px 0
-      margin: 5px 0
-
-    
-    
-    .btn
-      display: inline-block
-      background: $sierra-purple
-      color: white
-      font-weight: 700
-      padding: 5px 10px
-      border-radius: 5px
-      margin: 5px 0
+    &:hover
+      background: #82D982
       @include easeOut
-
-      &:hover
-        background: $sierra-orange
-        @include easeOut
 
 @media screen and (max-width: 400px)
   .hero
@@ -72,16 +60,5 @@
     min-height: unset
     clip-path: unset
 
-    .call-to-action
-      bottom: 25px
-      right: 5%
-      left: 5%
-      text-align: center
-
-      h1, p, .btn
-        float: unset
-        margin: 0
-      
-      .btn
-        padding-left: 10px
+    
  

@@ -10,6 +10,10 @@ header
   cursor: pointer
   @include easeOut
 
+  &:hover .btn-line
+    background: $sierra-orange
+    @include easeOut
+
   .btn-line
     width: 28px
     height: 3px
@@ -70,12 +74,12 @@ header
   height: 0
   display: block
   overflow: hidden
-  background: $sierra-purple
+  background: $sierra-purple-light
   @include easeOut
   
 
   &.show
-    height: 175px
+    height: 200px
     @include easeOut
 
 .menu-nav
@@ -86,18 +90,19 @@ header
   @include easeOut
 
   .nav-item
-    display: block
-    width: 100%
-    margin: 0 auto
-    padding: 0 0 5px 35px
-    @include easeOut
-
     a
+      display:  block
+      margin: 0 auto
+      padding: 0 0 5px 35px
+      @include easeOut
+      border-bottom: 5px #ffffff solid
       font-size: 24px
       color: #fff
+      
 
       &:hover
-        color: $sierra-orange
+        background-color: $sierra-orange
+        @include easeOut
       
 @media screen and (max-width: 600px)
     .menu-btn
@@ -111,6 +116,9 @@ header
 
     .social
       position: static
-      margin: 0 0 10px 35px
+      margin: 10px 35px
+
+      a
+        margin-right: 10px
 
 
