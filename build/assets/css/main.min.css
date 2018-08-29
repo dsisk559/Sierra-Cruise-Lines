@@ -3,6 +3,10 @@
   margin: 0;
   padding: 0; }
 
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden; }
+
 body {
   position: relative; }
 
@@ -104,7 +108,7 @@ header {
   height: 0;
   display: block;
   overflow: hidden;
-  background: #9571ff;
+  background: linear-gradient(90deg, #9571ff 0%, #757de0 25%, #7192df 50%, #6b65c7 75%, #9571ff 100%);
   transition: all 0.5s ease-out; }
   .menu.show {
     height: 200px;
