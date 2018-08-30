@@ -5,7 +5,7 @@ var menuNav = document.querySelector(".menu-nav");
 var navItems = document.querySelectorAll(".nav-item");
 
 menuBtn.addEventListener("click", toggleMenu);
-AOS.init();
+// AOS.init();
 
 function toggleMenu() {
   menuBtn.classList.toggle("close");
